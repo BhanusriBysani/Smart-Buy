@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBuy</title>
+    <link rel="stylesheet" href="{{ url_for('serve_css', filename='home_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Input Wrapper Styling */
+        .input-wrapper {
+            position: relative;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .search-form input[type="text"] {
+            width: 100%;
+            padding: 8px 90px 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #micButton, #cameraIcon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: #444;
+            cursor: pointer;
+        }
+
+        #micButton {
+            right: 40px;
+        }
+
+        #cameraIcon {
+            right: 10px;
+        }
+
+        #micButton:hover,
+        #cameraIcon:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ✅ Header Section -->
+<div class="header">
+    <!-- Logo -->
+    <div class="logo">SmartBuy</div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form class="search-form" action="/search" method="get" enctype="multipart/form-data">
+            <div class="input-wrapper">
+                <input type="text" name="query" placeholder="Search for products..." id="searchInput" />
+
+                <!-- 🎤 Mic Button -->
+                <button type="button" id="micButton">
+                    <i class="fas fa-microphone"></i>
+                </button>
+
+                <!-- 📷 Camera Button -->
+                <label for="cameraInput" id="cameraIcon">
+                    <i class="fas fa-camera"></i>
+                </label>
+                <input type="file" id="cameraInput" name="image" accept="image/*" capture="environment" style="display: none;" onchange="submitImageSearch()">
+            </div>
+        </form>
+    </div>
+
+    <!-- 🛒 Cart Icon -->
+    <div class="cart-icon">
+        <a href="{{ url_for('cart') }}">
+            <img src="{{ url_for('serve_product_images', filename='cart.png') }}" alt="Cart">
+            {% if cart_count > 0 %}
+            <span class="cart-count">{{ cart_count }}</span>
+            {% endif %}
+        </a>
+    </div>
+</div>
+
+<!-- ✅ Product Grid -->
+<div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <img src="{{ url_for('serve_product_images', filename=product.image) }}" alt="{{ product.name }}">
+        <h3>{{ product.name }}</h3>
+        <p>₹{{ product.price }}</p>
+
+        <div class="button-group">
+            <form action="{{ url_for('checkout') }}" method="post">
+                <input type="hidden" name="product_name" value="{{ product.name }}">
+                <button type="submit" class="buy-now-btn">Buy Now</button>
+            </form>
+
+            <form action="{{ url_for('add_to_cart') }}" method="post">
+                <input type="hidden" name="product_name" value="{{ product.name }}">
+                <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<form action="{{ url_for('logout') }}" method="get">
+    <button type="submit">Logout</button>
+</form>
+
+<!-- Scripts -->
+<script src="{{ url_for('serve_js', filename='voice_search.js') }}"></script>
+<script src="{{ url_for('serve_js', filename='image_search.js') }}"></script>
+
+</body>
+</html>

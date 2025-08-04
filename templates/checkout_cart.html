@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - Cart Items</title>
+    <link rel="stylesheet" href="{{ url_for('serve_css', filename='checkout_cart.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">SmartBuy</div>
+        <div class="cart-icon">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('serve_product_images', filename='home.png') }}" alt="Back to Home" style="height: 35px;">
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Checkout for Cart Items</h2>
+
+        <div class="product-summary">
+            {% for product in products %}
+            <div class="product-box">
+                <img src="{{ url_for('serve_product_images', filename=product.image) }}" alt="{{ product.name }}">
+                <div class="product-details">
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: ₹{{ product.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="total">
+            <h3>Total Price: ₹{{ total_price }}</h3>
+        </div>
+
+        <form action="{{ url_for('confirm_cart_order') }}" method="post" class="checkout-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

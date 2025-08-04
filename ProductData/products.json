@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "name": "Party Wear Saree",
+    "price": 1199,
+    "image": "sarees/party_wear_saree.jpg",
+    "category": "sarees"
+  },
+  {
+    "id": 2,
+    "name": "Cotton Saree",
+    "price": 899,
+    "image": "sarees/printed_cotton_saree.jpg",
+    "category": "sarees"
+  },
+  {
+    "id": 3,
+    "name": "Red Saree",
+    "price": 1999,
+    "image": "sarees/red_saree.jpg",
+    "category": "sarees"
+  },
+  {
+    "id": 4,
+    "name": "Zari Saree",
+    "price": 999,
+    "image": "sarees/zari_saree.jpg",
+    "category": "sarees"
+  },
+
+  {
+    "id": 5,
+    "name": "Formal Attire",
+    "price": 799,
+    "image": "men/Formal_attire_men_dress.jpg",
+    "category": "men"
+  },
+
+  {
+    "id": 6,
+    "name": "Sleek Black Shirt",
+    "price":999,
+    "image": "men/Sleek_black.jpg",
+    "category": "men"
+  },
+
+  {
+    "id":7,
+    "name": "White Club Shirt",
+    "price": 699,
+    "image": "men/white_club.jpg",
+    "category": "men"
+  },
+  
+  {
+    "id": 8 ,
+    "name": "Long Sleev Shirt",
+    "price": 1599,
+    "image": "men/long_sleev_shirt.jpg",
+    "category": "men"
+  },
+
+  {
+    "id": 9 ,
+    "name": "Indo Western Dress",
+    "price": 2599,
+    "image": "Dress/Indo_Western_Dresses.jpg",
+    "category": "Dress"
+  },
+
+  {
+    "id": 10,
+    "name": "Pink Women Dress",
+    "price": 1599,
+    "image": "Dress/Pink_Women_Dress.jpg",
+    "category": "Dress"
+  },
+
+  {
+    "id": 11 ,
+    "name": "Women Western Dress",
+    "price": 2599,
+    "image": "Dress/Women_Western_Dress.jpg",
+    "category": "Dress"
+  },
+
+  {
+    "id": 12,
+    "name": "Summer Dress",
+    "price": 1999,
+    "image": "Dress/Summer_Dress.jpg",
+    "category": "Dress"
+  },
+  {
+    "id": 13,
+    "name": "Bruton shoes",
+    "price": 899,
+    "image": "shoes/brutonshoes.webp",
+    "category": "shoes"
+  },
+  {
+    "id": 14,
+    "name": "Red shoes",
+    "price": 1599,
+    "image": "shoes/jogging_shoes.webp",
+    "category": "shoes"
+  },
+  {
+    "id": 15,
+    "name": "running shoes",
+    "price": 1299,
+    "image": "shoes/runnning_shoes.webp",
+    "category": "shoes"
+  },
+  {
+    "id": 16,
+    "name": "white sneakers",
+    "price": 799,
+    "image": "shoes/white_sneakers.webp",
+    "category": "shoes"
+  }
+  
+]

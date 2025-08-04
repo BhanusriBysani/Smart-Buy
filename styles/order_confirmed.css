@@ -1,0 +1,42 @@
+/* order_confirmed.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 40px;
+}
+
+.confirmation-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #28a745;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.home-button {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
